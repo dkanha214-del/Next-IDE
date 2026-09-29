@@ -34,15 +34,11 @@ android.view.View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_yes:
-                c.finish();
-                break;
-            case R.id.btn_no:
-                dismiss();
-                break;
-            default:
-                break;
+        int id = v.getId();
+        if (id == R.id.btn_yes) {
+            c.finish();
+        } else if (id == R.id.btn_no) {
+            dismiss();
         }
         dismiss();
     }

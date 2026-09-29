@@ -1,7 +1,6 @@
 package com.hyperion.nextide;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,13 +11,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
-import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.BottomSheetDialog;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -33,14 +25,22 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.dengxiao.scroll_viewgroup_library.ScrollGroup;
-import com.gigamole.navigationtabstrip.NavigationTabStrip;
+// import com.gigamole.navigationtabstrip.NavigationTabStrip;  // Library not available
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.hyperion.nextide.MainActivity;
 
 /**
  * Created by cjj on 2016/2/29.
  */
-public class MainActivity extends Activity
+public class MainActivity extends AppCompatActivity
 {
     private static final String shareStr[] = {
         "MyApp1","MyApp2","MyApp3","MyApp4","MyApp5","MyApp6","MyApp7","NextIDE"
@@ -99,33 +99,33 @@ public class MainActivity extends Activity
 		}
         setContentView(R.layout.main); 
         
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setDisplayShowTitleEnabled(false); 
-        getActionBar().setHomeAsUpIndicator(R.drawable.image_11);
-        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        getActionBar().setElevation(0); 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false); 
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.image_11);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        getSupportActionBar().setElevation(0); 
 
         
         
         
         
-        final NavigationTabStrip navigationTabStrip = (NavigationTabStrip) findViewById(R.id.nts);
-        navigationTabStrip.setTitles("main.xml", "main.xml", "main.xml", "main.xml", "main.xml", "main.xml");
-        navigationTabStrip.setTabIndex(0, true);
-        navigationTabStrip.setTitleSize(30);
-        navigationTabStrip.setStripColor(Color.parseColor("#0197F6"));
-        navigationTabStrip.setStripWeight(12);
-        navigationTabStrip.setStripFactor(2);
-        navigationTabStrip.setStripType(NavigationTabStrip.StripType.LINE);
-        navigationTabStrip.setStripGravity(NavigationTabStrip.StripGravity.BOTTOM);
-        navigationTabStrip.setTypeface("fonts/typeface.ttf");
-        navigationTabStrip.setCornersRadius(3);
-        navigationTabStrip.setAnimationDuration(300);
-        navigationTabStrip.setInactiveColor(Color.BLUE);
-        navigationTabStrip.setActiveColor(Color.BLACK); 
-        
-      //  navigationTabStrip.setOnPageChangeListener(...);
-      //  navigationTabStrip.setOnTabStripSelectedIndexListener(...);
+//         final NavigationTabStrip navigationTabStrip = (NavigationTabStrip) findViewById(R.id.nts);
+//         navigationTabStrip.setTitles("main.xml", "main.xml", "main.xml", "main.xml", "main.xml", "main.xml");
+//         navigationTabStrip.setTabIndex(0, true);
+//         navigationTabStrip.setTitleSize(30);
+//         navigationTabStrip.setStripColor(Color.parseColor("#0197F6"));
+//         navigationTabStrip.setStripWeight(12);
+//         navigationTabStrip.setStripFactor(2);
+//         navigationTabStrip.setStripType(NavigationTabStrip.StripType.LINE);
+//         navigationTabStrip.setStripGravity(NavigationTabStrip.StripGravity.BOTTOM);
+//         navigationTabStrip.setTypeface("fonts/typeface.ttf");
+//         navigationTabStrip.setCornersRadius(3);
+//         navigationTabStrip.setAnimationDuration(300);
+//         navigationTabStrip.setInactiveColor(Color.BLUE);
+//         navigationTabStrip.setActiveColor(Color.BLACK); 
+// 
+//       //  navigationTabStrip.setOnPageChangeListener(...);
+//       //  navigationTabStrip.setOnTabStripSelectedIndexListener(...);
         
         DisplayMetrics metric = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metric);

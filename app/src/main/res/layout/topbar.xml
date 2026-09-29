@@ -22,7 +22,8 @@
             android:background="@null"
             >
 
-            <com.gigamole.navigationtabstrip.NavigationTabStrip
+            <!-- NavigationTabStrip library not available - replaced with View placeholder -->
+            <View
                 android:id="@+id/nts"
                 android:layout_width="fill_parent"
                 android:layout_height="48dp"
